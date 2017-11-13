@@ -8,7 +8,8 @@ var nav = document.getElementById('nav')
 var hash = {
     'q': 'qq.com',
     'j': 'jianshu.com',
-    'z': 'zhihu.com'
+    'z': 'zhihu.com',
+    'm': 'mayufo.github.io'
 }
 
 var localHash = JSON.parse(localStorage.getItem('hash') || 'null')
@@ -51,7 +52,7 @@ for (var i = 0, len = keys.length; i < len; i++) {
             e.stopPropagation();
         }
         delBtn.onclick = function (e) {
-            hash[e.target.innerText] = ''
+            hash[e.target.parentNode.innerText] = ''
             e.stopPropagation();
         }
         kbd.onclick = function (e) {
@@ -67,16 +68,10 @@ for (var i = 0, len = keys.length; i < len; i++) {
 
 
 document.onkeypress = function (e) {
-    var active = document.getElementById(e.key)
-    // active.style.backgroundColor = '#ffffff'
-    // active.style.color ='#27ae60'
+    // var active = document.getElementById(e.key)
     if (hash[e.key]) {
         window.open ('http://' + hash[e.key], '_black')
     }
 }
 
-// document.onkeyup = function (e) {
-//     var active = document.getElementById(e.key)
-//     active.style.backgroundColor = '#27ae60'
-//     active.style.color ='#ffffff'
-// }
+
