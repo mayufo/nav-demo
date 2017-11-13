@@ -6,10 +6,16 @@ var keys = [
 
 var nav = document.getElementById('nav')
 var hash = {
+    'c': 'www.cnblogs.com/mayufo/',
     'q': 'qq.com',
-    'j': 'jianshu.com',
+    'j': 'jirengu.com/live',
     'z': 'zhihu.com',
-    'm': 'mayufo.github.io'
+    'm': 'mayufo.github.io',
+    't': 'taobao.com',
+    'b': 'baidu.com',
+    'g': 'google.com',
+    'w': 'www.wunderlist.com/webapp#/lists/inbox',
+    'x': 'xiedaimala.com/courses/ec3a5e28-02da-47d6-9226-927db23e82a2'
 }
 
 var localHash = JSON.parse(localStorage.getItem('hash') || 'null')
@@ -56,7 +62,7 @@ for (var i = 0, len = keys.length; i < len; i++) {
             e.stopPropagation();
         }
         kbd.onclick = function (e) {
-            console.log(e.target.id)
+            console.log(hash[e.target.id], e.target.id, hash.w)
             if (hash[e.target.id]) {
                 window.open ('http://' + hash[e.target.id], '_black')
             }
